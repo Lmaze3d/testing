@@ -1,0 +1,199 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  transform-style: flat;
+  
+  
+}
+body{
+  background: #002f2a;
+  background-image: url('test_04_tras.png');
+  background-repeat: no-repeat;
+  background-size: 385px 385px;
+  background-position-y: 15vh;
+  background-position-x: 50%;
+  /* background-size: 109%; */
+  
+}
+::selection{ /*seleccion del texto_pintar*/
+  color: #fff;
+  background: #4285f4;
+  
+}
+
+h1{
+    color: rgb(2, 23, 139);
+    text-align: center;
+    font-weight: normal;
+    text-decoration: underline;
+    text-shadow: 0px 0px 2px rgba(255, 255, 255); /* desplazamiento-x desplazamiento-y desenfoque color */
+    
+    
+    
+}
+
+.wrapper{
+  width: 350px;
+  margin: 40px auto 0;
+  color: rgb(0, 0, 0); /*color texto "Seleccionar"*/
+  font-weight: 500;
+  
+  
+}
+.select-btn, li{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  /* font-family: "Courier New", Courier, monospace; */
+ 
+}
+.select-btn{ /*recuadro seleccion*/
+  height: 45px;
+  padding: 0 10px; /*interior(texto)*/
+  font-size: 17px;
+  background: #83fdd5;
+  border-radius: 7px;
+  justify-content: space-between; /*separa flechita de texto*/
+  align-items: center;
+  outline: 3px solid rgb(255, 255, 255);
+  outline-offset: 4px;
+  outline-style: dashed;
+  box-shadow: 0px 0px 10px 8px  rgba(121, 121, 121, 0.6); /*-x -y -blur -spread*/
+  
+}
+.select-btn i{ /*flechita ^ */
+  font-size: 31px;
+  transition: transform 0.3s linear;
+  
+  
+}
+.wrapper.active .select-btn i{
+  transform: rotate(-180deg);
+  
+}
+.content{ /*cuadro lista de contenido_buscado*/
+  display: none;
+  padding: 20px;
+  margin-top: 15px;
+  background: #fff;
+  border-radius: 7px;
+  /*font-variant: small-caps;  ---primeras letras Capital*/
+  box-shadow: -21px 22px 10px -10px rgba(0, 57, 100, 0.84);
+  
+}
+.wrapper.active .content{
+  display: block;
+  
+}
+.content .search{
+  position: relative;
+  
+}
+.search i{ /* lupita */
+  top: 50%;
+  left: 15px;
+  color: #999999;
+  font-size: 20px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  position: absolute;
+  
+}
+.search input{ /*Recuardo Search*/
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  border-radius: 5px;
+  padding: 0 20px 0 43px;
+  border: 1px solid #b3b3b3;
+  
+}
+.search input:focus{ /*recuadro buscador*/
+  padding-left: 42px;
+  border: 3px solid #b3b3b3;
+  box-shadow: 0px 0px 6px 4px  rgba(148, 144, 249, 0.3);
+}
+.search input::placeholder{ /*letras fantasmas"Search"*/
+  color: #878887;
+  
+}
+.content .options{
+  margin-top: 10px;
+  max-height: 300px; /*alto contenido cuadro listado*/
+  overflow-y: auto;
+  padding-right: 7px;
+  
+}
+.options::-webkit-scrollbar{
+  width: 10px; /* ancho scroll-Chrome*/
+  
+}
+.options::-webkit-scrollbar-track{
+  background: #f1f1f1; /* color fondo Scroll-Chrome */
+  border-radius: 25px;
+  
+}
+.options::-webkit-scrollbar-thumb{
+  background: #f50000; /* color Scroll-Chrome */
+  border-radius: 25px;
+  
+}
+.options::-webkit-scrollbar-thumb:hover{
+  background: #b3b3b3;
+  
+}
+.options li{ /* LISTA */
+  height: 50px; /*separacion renglon*/
+  /* padding: 0 13px; */
+  font-size: 16px; /* Tamaño fuente lista*/
+  text-transform: capitalize; /*Primeras letras Capital*/
+  
+}
+.options li:hover, li.selected{ /*hover mouse list*/
+  border-radius: 5px;
+  background: #f2f2f2;
+  text-decoration: underline overline #FF3028 20%; /* lineas arriba-abajo [https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration]*/
+}
+
+
+.boxes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;/* asegura de que los elementos se mantengan en una sola fila horizontal y no se envuelvan a la siguiente línea.*/
+  justify-content: center;/*se centran los elementos horizontalmente dentro del contenedor.*/
+  /* justify-content: space-evenly; /*distribuye el espacio restante entre los elementos secundarios de manera uniforme, con la misma cantidad de espacio entre ellos y alrededor de ellos.*/
+  padding-top: 100px;
+  
+  
+}
+
+.boxes > *{
+  border: 1px solid rgb(0, 0, 0);
+  width: 60px;
+  height: 150px;
+  background: rgb(157, 157, 157);
+  padding: 14px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  
+}
+
+
+@media screen and (min-width: 602px) {
+  body{
+    background: #002f2a;
+    background-image: url('test_04_tras.png');
+    background-repeat: no-repeat;
+    background-size: 450px 450px;
+    background-position-y: 15vh;
+    background-position-x: 50%;
+    
+    
+  }
+
+}
